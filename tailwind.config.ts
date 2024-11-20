@@ -1,19 +1,30 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+    content: [
+        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    theme: {
+    	extend: {
+    		colors: {
+    			background: 'var(--background)',
+    			foreground: {
+					DEFAULT: 'var(--foreground-black)',
+					yellow: 'var(--foreground-yellow)',
+					black: 'var(--foreground-black)',
+					gray: 'var(--foreground-gray)',
+					purple: 'var(--foreground-purple)',
+					divider: 'var(--divider)',
+				},
+    		},
+    		screens: {
+    			'3xl': '1920px'
+    		},
+    	}
     },
-  },
-  plugins: [],
+	// eslint-disable-next-line @typescript-eslint/no-require-imports
+    plugins: [require("tailwindcss-animate")],
 };
 export default config;
