@@ -16,10 +16,13 @@ const config: Config = {
 					black: 'var(--foreground-black)',
 					gray: 'var(--foreground-gray)',
 					purple: 'var(--foreground-purple)',
-					divider: 'var(--divider)',
+
 				},
+				divider: 'var(--divider)',
+				border: 'var(--border)',
     		},
     		screens: {
+				'xs': '360px',
     			'3xl': '1920px'
     		},
     	}

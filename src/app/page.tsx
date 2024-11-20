@@ -1,7 +1,17 @@
-import HomePage from "@/components/pages/HomePage";
+// app/page.tsx
+import HomePage from '@/components/pages/HomePage';
 
-export default function Home() {
-  return (
-      <HomePage/>
-  );
+async function getData() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/sample-data`);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+}
+
+export default async function Home() {
+  await getData();
+  return <HomePage />;
 }
