@@ -1,11 +1,10 @@
-// app/page.tsx
 import HomePage from '@/components/pages/HomePage';
 
 async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/sample-data`);
 
   if (!res.ok) {
-    throw new Error('Failed to fetch data');
+    return;
   }
 
   return res.json();
